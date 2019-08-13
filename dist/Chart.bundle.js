@@ -11059,7 +11059,7 @@ var core_scale = core_element.extend({
 				if (Object.prototype.toString.call( tickFontColor ) === '[object Array]') {
 					context.fillStyle = itemToDraw.major ? majorTickFontColor[index] : tickFontColor[index];
 				} else if (typeof tickFontColor === 'function') {
-					context.fillStyle = tickFontColor.call(this, index);
+					context.fillStyle = tickFontColor.call(me, index);
 				} else {
 					context.fillStyle = itemToDraw.major ? majorTickFontColor : tickFontColor;
 				}
