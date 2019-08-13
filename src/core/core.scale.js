@@ -923,7 +923,15 @@ module.exports = Element.extend({
 				context.translate(itemToDraw.labelX, itemToDraw.labelY);
 				context.rotate(itemToDraw.rotation);
 				context.font = itemToDraw.major ? majorTickFont.string : tickFont.string;
-				context.fillStyle = itemToDraw.major ? majorTickFontColor : tickFontColor;
+				
+				if (Object.prototype.toString.call( tickFontColor ) === '[object Array]') {
+					context.fillStyle = itemToDraw.major ? majorTickFontColor[index] : tickFontColor[index];
+				} else if (typeof tickFontColor === 'function') {
+					context.fillStyle = tickFontColor(index);
+				} else {
+					context.fillStyle = itemToDraw.major ? majorTickFontColor : tickFontColor;
+				}
+				
 				context.textBaseline = 'middle';
 				context.textAlign = itemToDraw.textAlign;
 
