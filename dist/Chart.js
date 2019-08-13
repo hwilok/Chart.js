@@ -11012,7 +11012,7 @@ var core_scale = core_element.extend({
 		});
 
 		// Draw all of the tick labels, tick marks, and grid lines at the correct places
-		helpers$1.each(itemsToDraw, function(itemToDraw) {
+		helpers$1.each(itemsToDraw, function(itemToDraw, index) {
 			var glWidth = itemToDraw.glWidth;
 			var glColor = itemToDraw.glColor;
 
