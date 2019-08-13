@@ -15,6 +15,12 @@
     "html5",
     "responsive"
   ],
+  "files": [	
+    "bower.json",	
+    "composer.json",	
+    "dist/*.css",	
+    "dist/*.js"	
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/chartjs/Chart.js.git"
